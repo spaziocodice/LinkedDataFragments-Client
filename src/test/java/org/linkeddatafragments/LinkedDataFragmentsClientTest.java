@@ -6,6 +6,8 @@ import org.apache.jena.graph.Triple;
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.sparql.ARQConstants;
+import org.apache.jena.sparql.util.Symbol;
 import org.junit.Before;
 import org.junit.Test;
 import org.linkeddatafragments.model.LinkedDataFragmentGraph;
@@ -21,6 +23,9 @@ public class LinkedDataFragmentsClientTest {
 
     @Before
     public void setUp() {
+        ARQ.init();
+        Symbol x = ARQConstants.sysOpExecutorFactory;
+        System.out.println(x);
         LinkedDataFragmentGraph ldfg = new LinkedDataFragmentGraph("http://data.linkeddatafragments.org/dbpedia2014");
         model = ModelFactory.createModelForGraph(ldfg);
     }

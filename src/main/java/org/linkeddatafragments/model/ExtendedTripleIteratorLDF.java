@@ -9,8 +9,6 @@ import java.util.function.Predicate;
 
 import org.apache.jena.graph.Triple;
 import org.apache.jena.util.iterator.ExtendedIterator;
-import org.apache.jena.util.iterator.Filter;
-import org.apache.jena.util.iterator.Map1;
 import org.linkeddatafragments.client.LinkedDataFragmentsClient;
 
 /**

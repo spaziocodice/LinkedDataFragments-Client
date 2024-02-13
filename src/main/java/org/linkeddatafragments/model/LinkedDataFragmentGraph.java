@@ -26,7 +26,6 @@ public class LinkedDataFragmentGraph extends GraphBase {
     protected LDFStatistics ldfStatistics;
 
     static {
-        // Register OpExecutor
         QC.setFactory(ARQ.getContext(), OpExecutorLDF.opExecFactoryLDF);
         LinkedDataFragmentEngine.register();
     }
@@ -110,8 +109,7 @@ public class LinkedDataFragmentGraph extends GraphBase {
         throw new UnsupportedOperationException();
     }
 
-    @Override
-    public GraphStatisticsHandler getStatisticsHandler() {
+    public LDFStatistics getStatisticsHandler() {
         if(this.ldfStatistics == null) {
             this.ldfStatistics = new LDFStatistics(this);
         }
